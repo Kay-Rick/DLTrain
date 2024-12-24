@@ -13,7 +13,7 @@ def read_data_and_dataloader(dataset, train_batch_size, evaluate_batch_size):
         test_data = torchvision.datasets.MNIST(root=config.mnist_dir, train=False, download=True, transform=transform)
     if (dataset == "Cifar10"):
         transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
-        train_data = torchvision.datasets.CIFAR10(root=config.cifar10_dir, train=False, download=True, transform=transform)
+        train_data = torchvision.datasets.CIFAR10(root=config.cifar10_dir, train=True, download=True, transform=transform)
         test_data = torchvision.datasets.CIFAR10(root=config.cifar10_dir, train=False, download=True, transform=transform)
     if (dataset == "Cifar100"):
         mean = (0.5070751592371323, 0.48654887331495095, 0.4409178433670343)
